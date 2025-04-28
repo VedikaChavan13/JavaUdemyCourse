@@ -1,0 +1,299 @@
+**Fundamental Features of Object Oriented Programming**
+Namely: 1. Inheritance 2. Encapsulation, Polymorphism and Composition
+
+**What is Object Oriented Programming**
+Object Oriented Programming is a way to moddel real world objects as software objects which contains both data and code.
+OOP is a common acronym for Object Oriented Programming
+Also know as Class based Programming
+
+**Class based Programming**
+Class based programming starts with classes which become the blueprints for objects.
+
+**Real World Object Example**
+Look around the area you are sitting rn
+I can see :
+A computer
+Microphone
+Books
+Door
+
+All of these are example of real world objects
+
+Real world objects have two major components:
+-state
+-and behavior
+
+State(Computer)
+State, in terms of a computer object, might be:
+The amount of RAM it has
+The operating system it's running
+The hard drive size
+The size of the monitor
+These are characteristics about the item that can describe it
+
+Behavior(computer)
+In addition to state, objects may also have behavior or actions that can be performed by the object, or upon the object.
+Behavior, for a computer, might be things like:
+-Booting up
+-Shutting down
+-Beeping or outputting some form of sound
+-Drawing something on the screen, and so on
+
+State and Behavior
+Modelling real world objects as software objects is a fundamental part of Object Oriented Programming
+A software object stores its state in fields, which can also be called variables or attributes
+Object expose their behavior with methods 
+Think of a class as a template or a blueprint for creating objects
+
+**The Class as the Blueprint**
+The class describes the data (fields) and the behavior(methods),that are relevant to the real world object we want to describe
+
+These are called class members
+-Instance Members
+-Static Members
+
+A class member can be a field or a method, or some other type of dependent element
+If a field is static, there is only one copy in memory, and this value is associated with the class or template itself
+If a field is not static, it's called an instance field, and each object may have a different value stored for this field 
+A static method can't be dependent on any one object's state, so it can't reference any instance members.
+In other words, any method that operated on instance fields needs to be non-static.
+
+*Organizing classes*
+Classes can be organized into logical groupings which are called packages
+You declare a package name in the class using the package statement
+If you dont declare a package, the class implicitly belongs to the default package.
+
+
+**Access modifiers for class members**
+An access modifier at the member level allows granular control over class members
+
+Access Keywords
+-public: public means any other class in any package can access this class.
+-protected: protected allows classes in the same package, any any subclasses in other packages, to have access to the member
+-private: private means that no other class can access this member
+
+**Encapsulation**
+Encapsulation in Object Oriented Programming usually has two meanings
+One is the bundling of behavior and attributes on a single object
+The other is the practice of hiding fields and some methods from public access.
+
+**Null**
+null is a special keyword in Java, meaning, the variable or atttribute has a type but no reference to an object
+This means that no instance or object is assigned to the variable or field
+Fields with primitive data types are never null
+
+**Default values for fields on classes**
+Fields on classes are assigned default values automatically by Java, if you don't assign values ypurself
+
+Data Type       Default value assigned
+boolean         false
+
+byte
+short 
+int              0
+long
+char 
+
+double 
+float            0.0
+
+**What are getters and setters? Why should we use them?**
+A getter is a method on a class that retrieves the value of a private field and return it
+
+A setter is a method on a class that sets the value of a private field
+
+The purpose of these methods is to control and protect access to private fields
+
+**this**
+"this" is a special keyword in java
+What it really refers to is the instance that was created when the object was instantiated
+So, "this" is a special reference name for the object or instance, which it can use to describe itself
+And we can use "this" to access fields on the class
+
+
+** Reference vs Object vs Instance vs Class
+Lets use the analogy of building a house to understand classes
+A class is basically a blueprint for the house
+Using the blueprint, we can build as many houses as we like based on those plans
+Each house we build (in other words, going back to programming terms, each house we instantiate using the new operator)is an Object
+This object can also be known as an instance. Often we'll say it's an instance of the class.
+So we would have an instance of house in this example
+Getting back to the physical world, each house we build has an address(it's built at a physical location)
+In other words, if we want to tell someone where we live, we give them our address(perhaps written on a piece of paper). This is known as a reference
+
+**Static vs instance variable**
+*Static*
+Declaring by using the keyword static.
+Static variables are known as static member variables
+Every instance of the class shares the same static variable 
+If changes are made to the variable, all other instances of that class will see the effect of that change
+
+It is considered best pratice to use the Class name and not a reference variable to access a static variable
+
+class Dog {
+    static String genus = "Canis";
+    void printData(){
+        Dog d = new Dog ();
+        System.out.println(d.genus);   //confusing
+        System.out.println(Dog.genus); //clearer
+
+    }
+}
+
+An instance is not required to exist to access the value of a static variable
+
+class dog {
+    static String genus = "Canis";
+}
+class Main {
+    public static void main (String[]args){
+        System.out.println(Dog.genus); //No instance of Dog needs to exist, in order to access a static variable 
+    }
+}
+
+Static Variables aren't used very often but can sometimes be very useful
+They can be used for:
+-Storing counters
+-Generating unique IDs
+-Storing a constant value that doesn't change , like Pi,for example
+-Creating and controlling access to a shared resource
+
+class Dog{
+    private static String name;
+    public Dog(String name){
+        Dog.name = name;
+    }
+
+    public void printName(){
+        System.out.println("name= "+ name); //Using Dog.name would have made this code less confusing 
+    }   
+}
+public class Main{
+
+    public static void main(String[]args){
+        Dog rex = new Dog("rex"); //Create Instance (rex)
+        Dog fluffy = new Dog ("fluffy") //create instance (fluffy)
+        rex.printName(); //prints fluffy
+        fluffy.printName(); //prints fluffy
+    }
+
+}
+
+Why would both methods here print fluffy? Well, remember that static variables are shared between instances. Once we change the static variable, all instances will see the change we made. When I called the constructor with the argument fluffy, it modified the static variable name because both instances were sharing that variable. That's why it prints fluffy twice.
+
+*Instance variable*
+-They don't use the static keyword
+-They're also known as fields or member variables
+-Instance variables belong to specific instance of a class
+-Each instance has its own copy of an instance variable
+-Every instance can have a different value
+-Instance variables represent the state of a specific instance of a class
+
+class Dog{
+    private String name;
+
+    public Dog(String name){
+        this.name=name;
+    }
+    public void printName(){
+        System.out.println("name= +name');
+    }
+}
+public class Main{
+    public static void main(Srtring []args){
+        Dog rex= new Dog("rex"); //create instance(rex)
+        Dog fluffy= new Dog("fluffy") //create instance(fluffy)
+        rex.printName(); //print rex
+        fluffy.printName(); //print fluffy
+    }
+}
+
+**Difference between static vs instance methods**
+
+**Static Method**
+-Static methods are declared using a static modifier
+-Static methods can't access instance methods and instant variables directly
+-They're usually used for operations that don't require any data from an instance of the class(from "this")
+-If you remember, the "this" keyword is the current instance of a class
+-Inside a static method, we can't use "this" keyword
+-Whenever you see a method that doesn't use instance variables, that method should probably be declared as a static method
+-For example, main is a static method and it's called by the java virtual machine when it starts the Java application
+
+
+//Example (Static Method)
+
+class Calculator{
+    public static void printSum(int a, int b){
+        System.out.println("sum= "+ (a+b));
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        Calculator.printSum(5,10);
+        printHello(); //Shorter form of Main.printHello();
+    }
+    //Static methods are called as ClassName.methodName(); or methodName(); only if in the same class
+
+    public static void printHello(){
+        System.out.println("Hello);
+    }
+}
+
+*Instance Methods*
+-Instance methods belong to an instance of a class
+-To use an instance method, we have to instantiate the class first, usually by using the new keyword
+-Instance methods can access instance methods znd instance variables directly
+-Instance method can also access static methods and static variables directly
+
+Example
+class Dog{
+    public void bark(){
+        System.out.println("woof");
+    }
+
+}
+public class Main{
+    public static void main(String[]args){
+
+        Dog rex= new Dog(); //create instance
+        rex.bark(); //call instance method
+    }
+}
+
+*Static or Instance Method?*
+
+1. Question: Should a method be static
+1. Question: Does it use any field (instance variable) or instance methods?
+- yes: It should probably be an instance method
+-no: It should probably be a static method
+
+
+**Plain old java object**
+-A plain old java object(whose acronym is POJO) is a class that generally only has instance field
+-It's used to house data and pass data between funtional classes
+-It usually has no other, or very few methods,other than getters and setters for the instance fields
+-Many database frameworks uses POJO's to read data from,or to write data to databases, files or streams
+
+Example:
+-A POJO also might be called a bean or a JavaBean
+-A JavaBean is just a POJO with some extra rules applied to it
+-A POJO is sometimes called an Entity because it mirrors database entites
+-Another acronym is DTO for Data Transfer Object
+-It's description of ab object that can be modeled as just data
+
+Support for POJO creation
+-There are many generation tools that will turn a data model into generated POJO's or JavaBeans
+-You've seen an example of similar code generation in Intellij, which allowed me to generate getters,setters, and constructors in a uniform way.
+
+
+**Annotation**
+-Annotations are a type of metadata
+-Metadata is a way to formally describe additional information about our code
+-Annotations are more structured an have more meaning than comments
+-This is because they can be used by the compiler or other types of pre-processing functions, to get information about the code.
+-Metadata doesn't affect how the code runs so this code will still run with or without the annotation
+
+**Overridden Method**
+-An overridden method is not the same thing as an overloaded method
+-An overridden method is a special method in java that other classes can implement if they use a specified method signature
+

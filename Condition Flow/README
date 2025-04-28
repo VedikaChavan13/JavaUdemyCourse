@@ -1,0 +1,223 @@
+Dealing with control flow statements
+These are essential for programming to determine the flow of your program
+In other words, what should be executed and under what conditions.
+But also,how often a code segment should be executed.
+
+**Switch Statement**
+A switch statement is a control flow construct in programming that allows a variable to be tested for equality against a list of predefined values, called cases.
+Each case contains the logic to be executed when the variable matches the value. It is an alternative to using multiple *if-else* statements and is typicallly used when you need to compare the same variable to multiple possible values.
+
+**Syntax**
+switch(value){
+    case x:
+       //Code for value ==x
+       break;
+    case y:
+       // Code for value == y
+       break;
+    default:
+       //Code for value not equal to x or y
+}
+
+**Valid Switch Value Types**
+byte, short, int, char
+Byte, Short, Integer, Character
+String
+enum 
+
+**Important: Cannot use lomg, float, double or boolean or their wrappers.**
+
+**Fall through in switch statement**
+Once a swtich case label matches the switch variable, no more cases are checked.
+Any code after the case label where there was a match found, will be executed, until a break statement, or the end of the switch statement occurs.
+Without a break statement, execution will continue to fall through any case labels declared below the matching one, and execute each case's code.
+
+**Loop**
+In java, loops are used to execute a block of code repearedly until a specified condition is met.
+There are three main type of loops in java:
+
+Statement            Explanation
+for                  The for loop is more complex to set up but is commonly used when you are iterating over a set of values
+while                The while loop execute until a specified condition becomes false.
+do while             The do while loop always execute at least one and continues until a specified conditon becomes false
+
+
+**The for statement:** is often referred to as the for loop.
+It repeatedly loops something until a condition is satisfied.
+
+for (init; expression; increment){
+   //block of statements
+}
+
+
+These are declared in parentheses,after the for keyword, and are separated by semi colons.
+
+These parts are all optional and consist of the following:
+1. The initialization section declares or sets state, usually declaring and initializing a loop variable, before the loop begins processing.
+2. The expression section, once it becomes false, will end the loop processing.
+3. The increment section is executed after the expression is tested, and is generally the place where the loop variable is incremented.
+
+**While loop:**
+
+while(expression){
+   //block of statements
+}
+
+**The do while statement**
+
+do{
+   //block of statements
+}while(expression);
+
+**continue**
+The continue statment, in its simplest form, will stop executing the current iteration of a block of code in a loop, and start a new iteration.
+
+
+**While and do while recap**
+1. Now, firstly the while loop checks the condition at the start, before executing the block.
+2. Compare that to the do - while loop where the code is executed at least once, and then the condition is checked.
+3. When using loops, you want to carefully examine the conditions for terminating or continuing a loop.
+4. Check for endless or infinte loops.
+5. Check for conditions where a loop will never execute.
+6. The continue and break statements both interrupt normal loop processing.
+7. The continue statement exists the loop at the point it's executed, and no longer completes any code in the loop, and wont continue iterating any longer.
+
+Local variable are a way to store and manipulate temporary data
+In addition to local variables, we can set up data to be defined and used as part of a class or an object
+
+A class can be described as
+1. a custom data type
+2. a special code block that contains methods
+
+A class in Java is a template or blueprint for creating objects. It defines:
+
+Attributes (variables) – The properties of an object.
+Methods (functions) – The behavior or actions an object can perform.
+
+A Java class consists of:
+
+Class Declaration – Using the class keyword.
+Instance Variables – Variables inside a class (representing properties).
+Methods – Functions inside a class (representing behavior).
+Objects – Instances of a class created using new.
+
+The class is a template for creating objects
+- A class is like an empty form that gets copied and handed out 
+- Form is copied and handed out. So this is like Object Creation from the class
+- An object is like the form once it's been handed out and filed in
+- Each object will have unique values for the form data being collected 
+- An object is called an instance of particular class.
+- You create an object by "Instantiating a class
+- Object and instance are interchangeable terms
+- You can create many objects using a single class. Each may have unique attributes or values
+
+
+**Declaring and instantiating a new object from a class**
+The most common way to create an object is to use the new keyword
+The new keyword creates an instance of a class , and you can optionally pass data when creating that instance to set up data on that object
+Looking at the string, it's actually a class .But it holds a special place in the java language, because we can create a String just by using a literal which we've seen 
+String s = "Hello";
+But we could also use newString s = new String("Hello");
+
+
+**Static Field **
+Requires "Static" keyword when declared on the class.
+Value of the field is stored in special memory locatin and only in one place 
+Value is accessed by ClassName.fieldname
+Example: Integer.Max_Value
+
+**Instance Field**
+Omits "static" keyword when declared on the class.
+Value of the field is not allocated any memory and has no value until object is created 
+Value is accessed by ObjectVariable.fieldname
+Example:
+myObject.myFieldName( myObject is our variable name for an object we create and myFieldName is an attribute on the class.)
+
+
+**Static Method**
+Requires "static" keyword when declared on the class
+Method is accessed by ClassName.methodName
+
+Example: Interger.parseInt("123");
+A method called parseInt is called directly from the Class,Integer.
+
+
+**Instance Method**
+Omits 'static' keyword when declared on the class
+Method is accessed by ObjectVariable.methodName
+
+Example: "hello".toUpperCase();
+A method called toUpperCase();
+
+A method calles toUpperCase is called on the instance of a string with value "hello".
+
+**Parsing Values and Reading Input using System.console()**
+
+When we read data in from either a file or form user input, it's common for the data to be intially stored as a String, which we'll need to convert to a numeric value.
+
+**Wrapper methods to parse strings to numeric value**
+
+Wrapper     Wrapper Method
+integer       parseInt(String)
+double        parseDouble(String)
+
+**Reading data from the console
+
+System.in : Like System.out, Java provides System.in which can read input from the console or terminal. It's not easy to use for beginners, and lots of code been built around it, to make it easier.
+
+System.console : This is java's solution for reading a single line and prompting user for information.Although this is easy to use, it doesn't work with IDE's because these environments disable it.
+
+Command Line Arguement : This is calling the Java program and specifying data in the call. This is very commonly used but doen't let us create an interactive application in a loop in java.
+
+Scanner: The Scanner class was built to be common way to read input, either using scanner System.in or file. For beginners, it's much easier to understand than the bare bones Sytem.in
+
+What's an exception?
+An exception is an error that happens in code
+Some types of errors can be predicted and named
+
+The try statement
+The try statement actually has two code blocks
+The first is declared directly after the try keyword, and this code block ends, and is followed by the declaration of the catch keyword.
+
+try{
+   //statements that might get errors
+
+}catch (Exception e){
+   //code to handle the exception
+}
+
+The scanner class
+The scanner class is described as a simple text scanner, which can parse primitive types and strings.
+To use the scanner class, we have to create an instance of scanner.
+This means we're creating an onject of type Scanner.
+We'll use the keyword, new, to do it.
+
+**new Keyword**
+The new keyword is used in what java calls a Class Instance Creation Expression.
+In its simplest form, it's the word new, followed by the class name, and empty parentheses.
+
+ClassName variableName = new ClassName();
+
+We can optionally pass arguments in those parentheses, as we saw with methods.
+
+ClassName variableName = new ClassName(argument1, argument2);
+
+We saw that we could do this with the String class, passing the text in the parentheses.
+
+
+**Instantiating Scanner**
+For reading input from the console or terminal, we instantiate a scanner object using new, followed by the scanner class name, and passing System.in as an argument, in the parentheses.
+
+Scanner sc = new Scanner(System.in);
+
+For reading input from a file. we instantiate a scanner object using new, again with the Scanner class name, but pass a File object, as an argument, in the parentheses.
+
+File is another class provided by java, for reading and writing files.
+
+Scanner sc = new Scanner(new File("nameOfFileOnFileSystem"));
+
+**Using the import statement**
+Java provides a library of code, which includes the Scanner class in a library called java.util.
+
+import java.util.Scanner;
+

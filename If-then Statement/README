@@ -1,0 +1,46 @@
+The if then statement is the most basic of all the control flow statements. It tells your program to execute a certain section of code, only if a particular test evaluates to *true*.
+This is know as conditional logic
+
+*Conditional logic* uses specific statements in java to allow us to check a condition, and execute certain code based on whether that condition(the expression) is true or false.
+
+*Assignment Operator* (=) assigns the value of an expression, to the variable to the left of the operator.  
+Ex: boolean isAlien = false; (so isAlien is the variable in this case, and its been set to false, which is the valuee of our expression.)
+
+*Equality Operator* (==) tests to see if two operands are considered equal, and returns a boolean value.
+Ex: if (isAlien == false) So here isAlien is tested against the value false.
+
+*The code block* allows more than one statement to be executed, in other words, a block of code 
+The format is: 
+           if (Expression){
+            //put one or more statements here
+           }
+
+=! not equal to sign 
+
+*Conditional Operators*
+&& Conditional AND
+|| Conditional OR
+?: Ternary ( Shorthand for if-then-else statement)
+
+*The logical AND operator and the logical OR operator*
+The and operator comes in two flavours in Java, as does the or operator
+&& is the logical and which operates on boolean operands- Checking if a given condition is true or false.
+The & is a bitwise operator working at the bit level. This is an advanced concept.(Both conditions should be true)
+
+Likewise || is the logical or, operates on boolean operands
+The | is a bitwise operator, which is also working at the bit level.(Atleast one condition should be true)
+
+*Not operator* 
+The exclamation mark(!),or NOT operator, is known as the Logical Complement Operator.
+It can be used with a boolean variable, to test for the opposite value.
+
+
+*The TERNARY OPERATOR?:* has three operands. The only operator currently in java that does have three. Officially, Java calls it the conditional operator.
+The struture of this operator is: 
+operand1? operand2 : operand3
+First condition operand1 is always boolean test
+The ternary operator is a shortcut to assigning one of two values to a variable.
+It is a shortcut of the if-then-else statement. 
+
+Java precedence table
+https://www.cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html

@@ -1,0 +1,392 @@
+n Java, Keywords are the Reserved words in a programming language that are used for some internal process or represent some predefined actions. These words are therefore not allowed to use as variable names or objects.
+There are 67 Keywords in Java.
+Here’s a categorized list of Java keywords:
+
+1. Control Flow Keywords
+These keywords are used to control the flow of the program:
+if
+else
+switch
+case
+default
+while
+do
+for
+break
+continue
+return
+
+2. Access Modifiers
+These define access levels for classes, methods, and variables:
+public
+private
+protected
+
+3. Class and Object Keywords
+These are used to define classes, objects, and inheritance:
+Class
+interface
+extends
+implements
+this
+super
+new
+instanceof
+
+4. Data Types
+These are used to define the type of a variable or method:
+Primitive Data Types:
+int, float, double, char, boolean, byte, short, long
+Non-Primitive Data Types:
+void
+
+5. Exception Handling
+These are used for handling exceptions:
+try
+catch
+finally
+throw
+throws
+
+6. Modifiers
+These keywords modify the behavior of classes, methods, and variables:
+static
+final
+abstract
+synchronized
+volatile
+transient
+
+7. Package and Import
+These are used to organize and include other Java packages:
+package
+import
+
+8. Concurrency
+These keywords are used for multi-threading and concurrency:
+synchronized
+volatile
+
+9. Others
+true, false: Boolean literals.
+null: Represents the null reference.
+assert: Used for debugging.
+enum: Defines enumerations.
+native: Indicates a method is implemented in native code (e.g., C or C++).
+strictfp: Ensures strict floating-point calculations.
+const: Reserved but not used in Java.
+goto: Reserved but not used in Java.
+
+
+Writing code is similar to writing a document. it consists of special hierarchical units, which together form a whole.
+
+The *Expression* - computes to a single value
+The *Statement* - Statements are stand alone units of work
+The *Code Block* - A set of zero, one or more statements, usually grouped together in some way to achieve a single goal.
+
+
+*Expressions*
+Definition: An expression in Java is any valid combination of variables, constants, and operators that produce a single value.
+Examples:
+Simple expressions: x + y, a * b, 10 + 20
+Complex expressions: (x + y) * z, Math.pow(a, b)
+Purpose: Expressions are the building blocks of statements. They are used to compute values.
+
+*Statements*
+Definition: A statement in Java is a complete command that performs an action. Statements are terminated with a semicolon (;).
+Types of Statements:
+Expression Statements: Evaluates an expression.
+Example: x = 10;
+Control Flow Statements: Alters the execution flow.
+Examples: if, for, while
+Declaration Statements: Declares variables or constants.
+Example: int a = 5;
+Method Invocation Statements: Calls a method.
+Example: System.out.println("Hello");
+
+int x = 10; // Declaration Statement
+x = x + 5;  // Expression Statement
+if (x > 10) { // Control Flow Statement
+    System.out.println("x is greater than 10");
+}
+
+*Whitespace*
+Definition: Whitespace includes spaces, tabs, and blank lines used in code.
+Purpose: Whitespace is used to separate tokens (e.g., keywords, operators) and make code easier to read.
+Rules:
+Java ignores excessive whitespace between tokens.
+However, proper usage of whitespace is important for code style and readability.
+
+int x = 5; // Proper spacing around operators
+System.out.println("Hello, World!"); // Space after keywords
+
+Excessive or poor whitespace can make code harder to read.
+
+Indentation
+Definition: Indentation refers to the spaces or tabs added at the beginning of a line to visually structure the code.
+Purpose: It helps improve code readability by visually separating blocks of code (e.g., within loops, conditionals, and methods).
+Conventions in Java:
+Typically, 4 spaces are used for each level of indentation.
+
+public class Example {
+    public static void main(String[] args) {
+        if (true) {
+            System.out.println("This is indented.");
+        }
+    }
+}
+Note: Unlike Python, Java does not enforce indentation for functionality but is critical for readability.
+
+
+*If with a Else block*
+
+if(condition){
+    //code in block will execute only if conditon is true
+} else{
+    //code in block will execute only if condition is false
+}
+
+*If with an Else if and Else block*
+
+if(firstCondition){
+    //code in the block will execute only if firstCondition is true
+} else if (secondCondition){
+    //code in block will execute if firstCondition is falseand secondCondition is true
+    *There is no limit to the number of conditions that can be tested*
+} ele{
+    //code in block will execute if all conditions abovr are false
+
+    *The Else block must be last but is optional*
+}
+
+*Method*
+A method declares executable code that can be invoked, passing a fixed number of values as arguments
+They are used to define the behavior of objects and can be called multiple times, improving code reusability and organization.
+
+
+*Components of a Method*
+A method in Java consists of the following components:
+
+Access Modifier: Determines the visibility of the method (e.g., public, private, protected).
+Return Type: Specifies the type of value the method returns (e.g., int, String, void if it returns nothing).
+Method Name: Describes the purpose of the method. It should follow Java naming conventions (camelCase).
+Parameters (Optional): Inputs to the method enclosed in parentheses.
+Method Body: Contains the code to be executed.
+
+**Benefits of Methods in Java (Short Version)**
+
+1. *Code Reusability:* Write once, use multiple times, reducing redundancy.
+2. *Modularity:* Breaks large programs into smaller, manageable pieces.
+3. *Readability:* Makes code easier to understand with descriptive method names.
+4. *Reduced Complexity:* Simplifies debugging and testing by isolating functionality.
+5. *Ease of Maintenance:* Changes in one method don’t affect others.
+6. *Scalability:* Enables adding new features without modifying existing code.
+
+**Struture of the Method**
+
+public static void methodName(){
+    //Method statements form the method body
+}
+
+This method has a name, but takes no data in, and returns no data from the method(which is what the special word void means in this declaration).
+
+This method has a name but takes no data in, and returns no data from the method (which is what the special word void means in this declaration)
+It is accessible to the outside world because it uses the keyword public.
+
+To execute a method, we can write a statement in code, which we say is calling, or invoking, the method.
+For a simple method like calculateScore(Mainchallenge part ), we just use the name of the method, where we want it to be executed, follwed by parentheses, and a semi colon to complete the statement.
+So for this example, the calling statement would look like the code shown here:
+public static viod calculateScore();
+
+**Method Parameters**
+
+Where we previously had empty parentheses after the method name, we now have method parameters in the declaration.
+
+public static void methodName(p1type p1, p2type p2,{more}){
+
+    //Method statements form the method body
+}
+
+**Parameters or Arguments**
+Parameters and arguments are terms that often used interchangeably by developers.
+
+But technically, a parameter is the definition as shown in the method declaration, and the argument will be the value that's passed to the method when we call it 
+
+**Executing a Method with parameters**
+To execute a method that's defined with parameters, you have to pass variables, values, or expressions that match the type, order and number of parameters, the first; a boolean, and then 3 int values as shown in this statement:
+
+calculateScore(true,800,5,100);
+
+I can't pass the boolean type in any other place, other than as the first argument, without an error.
+
+**Method structure with parameters and return type**
+
+//Method return type is a declared data type for the data type that will returned from the method
+
+public static dataType methodName(p1type p1,p2type p2,{more}){
+    //Method statements
+    return value;
+}
+
+So, similar to declaring a variable with a type, we can declare a method to have a type,
+This declared type is placed just before the method name.
+In addition, a return statement is required in the code block, as shown on the slide, which returns the result from the method.
+
+In previous examples we  declared the type to be void, which has the special meaning that no data would ne returned from the method.
+
+An example of a method declaration with a return type :
+In this case, the return type is an int.
+
+public static int calculateMyAge(int dateOfBirth){
+    return (2023 - dateOfBirth);
+}
+
+This method will return an integer when it finishes executing successfully.
+
+**The return statement**
+Java states that  a return statement returns control to the invoker of a method.
+In a method that doesn't return anything, in other words, a method declared with void as the return type, a return statement is not required. It is assumed and execution is returned after the last line of code in the method is executed.
+
+But in methods that do return data, a return statement with a value is required.
+
+**Method recap**
+1. A method declares executable code that can be invoked, passing a fixed number of values as arguments.
+2. A method can be statement or an expression in some instances.
+3. Any method can be executed as a statement.
+4. A method that returns a value can be used as an expressiom, or as part of any exoression.
+
+5. **What are functions and procedures?**
+Some programming languages will call a method that returns a value, a function, and a method that doesn't return a value, a procedure.
+
+You'll often hear function and method used interchangeably in java.
+The term procedure is somewhat less common,when applied to Java methods, but you may still hear a method with a void return type, called procedure.
+
+6. **Declaring the method**
+There are quite a few declarations that need to occur as we create a method.
+This consists of:
+Declaring Modifiers. These are keywords in Java with special meanings, we've seen public and static as examples,but there are others.
+
+Declaring the return type.
+   void is a java keyword meaning no data is returned from a method.
+   Alternatively, the return type can be any primitive data type or class.
+   If a return type is defined, the code block must use at least one return statement, returning a value, of the declared type or comparable type.
+
+7. Declarinth the method name. Lower camel case is recommended for method names.
+8. Declaring the method parameters in parentheses. A method is not required to have parameters, so a set of empty parentheses would be declared in that case.
+9. Delaring the method block with opening and closing curly braces.This is also called the method body.
+10. Parameters are declared as a list of comma-separated specifiers, each of which has a parameter type and a parameter name(or identifier).
+11. Parameter order is important when calling the method.
+12. The calling code must pass arguments to the method, with the same or comparable type, and in the same order, as the declaration.
+13. The calling code must pass the same number of arguments, as the number of parameters declared.
+14. When declaring a return type:
+void is a valid return type, and means no data is returned.
+Any other return type requires a return statement, in the method code block.
+15. If a method declares a return type, meaning it,s not void, then a return type is required at any exit point from the method block.
+Consider the method block shown here:
+
+        public static boolean isTooYoung( int age){
+            if (age<21){
+                return true;
+            }
+        }
+In this code the method is not returning values if the age is greater than or equal to 21
+
+So in the case of using a return statement in nested code blocks in a method, all possible code segments must result in a value being returned.
+The following code demonstrates one way to do this:
+
+        public static boolean isTooYoung(int age){
+            if(age<21){
+                return true;
+            }
+            return false;
+        }
+
+One common practice is to declare a default return value at the start of a method, and only have a single return statement from a method, returning that variable, as shown in this example method:
+         
+         public static boolean(int age){
+            boolean result=false;
+            if(age<21){
+                result=true
+            }
+            return result;
+         }
+
+The return statement can result with no value from a method, which is declared with a void return type.
+In this case, the return statement is optional, but it may be used to terminate execution of the method at some earlier point than the end of the method block, as shown here 
+     
+          public static void methodDoesSomething(int age){
+            if(age> 21){
+                return;
+            }
+            //Do more stuff here
+          }
+
+**The Method Signature**
+A method is uniquely defined in a class by its name, and the number and type of parameters that are declared for it.
+This is called the method signature.
+You can have multiple methods with the same method name, as long as the method signature(meaning the parameters declared) are different.
+This will become important later in this section, when we cover overloaded method     
+
+In many language, methods can defined with default values, and you can omit passing values for these when calling the method.
+But Java doesn't support default values for parameters.
+There are work arounds for this limitation.
+In java the number of arguements you pass, and their type, must match the parameters in the method declaration exactly.
+
+The main method is special in Java, because java's virtual machine(JVM) looks for the method, with this particular signature, and uses it as the entry point for executiom of code.
+
+        public static void main(String[] args){
+            //code in here
+        }
+
+
+**How to use the method round and how it works?**
+
+The Math.round() is a built-in math method which returns the closest long to the argument. The result is rounded to an integer by adding 1/2, taking the floor of the result after adding 1/2, and typecasting the result to type long. The method returns the value of the argument rounded to the nearest int value.
+
+**Method Overload**
+Method overloading occurs when a class has multiple methods with the same name, but the methods are declared with different parameters.
+So, you can execute multiple methods with the same name, but call it different arguments.
+Java can resolve which method it needs to execute based on the arguements being passed when the method is invoked.
+
+**Method Signature**
+A method signature consists of the name of the method, and the uniqueness of the declaration of its parameters.
+In other words, a signature is unique, not just by the method name, but in combination with the number of parameters, their types, and the order in which they are declared.
+A parameter name is also not part of the signature.
+
+**Valid Overloaded Methods**
+The type, order, and number of paramters, in conjunction with the name,make a method signature unique.
+A unique method signature is the key for the java compiler, to determine if a method is overloaded corrrectly.
+The name of the parameter is not part of the signature, and therefore it doesn't matter, from java's point of view,what we call our paramters
+
+Valid method overloaded:
+public static void doSomething(int parameterA){
+    //method body
+}
+public static void doSomething(float parameterA){
+    //Method body
+}
+public static void doSomething(int parameterA, int paramterB){
+    //method body
+}
+public static void doSomething(float paramterA, int parameterB){
+    //Method Body
+}
+public static void doSomething(int parameterA, int paramterB, float parameterC){
+    //Method Body
+}
+
+**Invalid Method Overloading**
+Paramter names are not important when determining if a method is overloaded.
+Nor are return types used when determining if a method is unique. 
+
+public static void doSomething(int paramterA){
+    //method body
+}
+public staic void doSomething(int parameterB){
+    //method body
+}
+public static int doSomething(int parameterA){
+    //method body
+}
+
+This is invalid overloaded method 
